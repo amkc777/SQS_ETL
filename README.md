@@ -59,7 +59,7 @@ Confirm that the containers are running as expected.
 Open a terminal and navigate to the project directory.
 Run the ETL script to perform data extraction, transformation, and loading:
 ```bash
-python task.py
+python impressive_etl.py
 ```
 This script will process messages from the SQS queue, mask PII data, and store the transformed data in the PostgreSQL database.
 
