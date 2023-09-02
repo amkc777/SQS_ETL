@@ -91,7 +91,7 @@ These design decisions were made to prioritize efficiency, data security, and us
 
 1. **How Would You Deploy This Application in Production?**
 
-Deploying this application for production involves a structured approach:
+ Deploying this application for production involves a structured approach:
 
 * Setting Up the Foundation: We'll start by creating an AWS SQS Queue to handle incoming messages. Additionally, we'll establish a PostgreSQL database, either within AWS or another cloud provider, to manage our data.
 * Containerization: To simplify deployment, we package the application into a Docker container. This containerization makes it easy to move our application across different environments.
@@ -103,7 +103,7 @@ Security measures, such as IAM roles and data encryption, are implemented to pro
 
 2. **What Other Components Would You Want to Add to Make This Production Ready?**
 
-To ensure our application is ready for production use, we've considered these additional components:
+ To ensure our application is ready for production use, we've considered these additional components:
 
 * Robust Error Handling: Implementing comprehensive error handling allows our application to gracefully handle unexpected issues without causing disruptions.
 * Testing Frameworks: We employ a suite of tests, including unit tests, integration tests, and performance tests, to ensure our application's reliability and maintainability.
@@ -114,9 +114,9 @@ To ensure our application is ready for production use, we've considered these ad
 
 **Scalability with a Growing Dataset**
 
-**How Can This Application Scale with a Growing Dataset?**
+3. **How Can This Application Scale with a Growing Dataset?**
 
-As our dataset grows, we're prepared to handle it seamlessly:
+ As our dataset grows, we're prepared to handle it seamlessly:
 
 * Load Balancing: We use load balancing to evenly distribute incoming traffic across multiple instances of our application, ensuring optimal performance even during high-demand periods.
 * Auto-scaling Groups: By employing auto-scaling groups, our application can automatically adjust the number of instances based on real-time workloads, providing the necessary scalability.
@@ -125,9 +125,9 @@ As our dataset grows, we're prepared to handle it seamlessly:
   
 **Data Recovery**
 
-**How Can PII Be Recovered Later On?**
+4. **How Can PII Be Recovered Later On?**
 
-Recovering personally identifiable information (PII) is a crucial aspect:
+ Recovering personally identifiable information (PII) is a crucial aspect:
 
 * Secure Data Storage: We securely store the original PII data, including user IDs and sensitive information, in a separate, encrypted location with restricted access.
 * Hash Comparison: When the need arises for PII data recovery, we apply the same SHA256 hash function used for masking to the original data.
@@ -135,9 +135,9 @@ Recovering personally identifiable information (PII) is a crucial aspect:
   
 **Assumptions**
 
-**What Assumptions Were Made?**
+5. **What Assumptions Were Made?**
 
-During the development of this solution, we worked with the following assumptions:
+ During the development of this solution, we worked with the following assumptions:
 
 * Local Development Environment: We assumed that Localstack and PostgreSQL are available locally, allowing us to access them via AWS CLI calls and PostgreSQL, respectively.
 * Message Format and Sequence: We expect that messages in the SQS queue are correctly formatted and arrive in the expected sequence for processing.
